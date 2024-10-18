@@ -65,6 +65,25 @@ NumberofCustomers DESC;
 
 
 o  find customers who canceled their subscription within 6 months. 
+
+To find the customers who canceled their subscription within 6 months, I need to identify the relevant tables and columns that store the cancellation information, including;
+
+1.  Customer Identification: Usually a ```CustomerID```
+2.  Cancellation Date: A column that records when the subscription was canceled that's ```CancelDate```
+3.  Start Date: The date when the subscription started that's ```StartDate```
+
+```
+SELECT CustomerId,
+SubscriptionStart,
+Canceled
+FROM [dbo].[CustomerData]
+WHERE
+Canceled IS NOT NULL
+AND DATEDIFF(Month, SubscriptionStart,Canceled)<=6;
+```
+
+![6months](https://github.com/user-attachments/assets/06d7415c-b0a9-4979-8443-c246be0b4c4d)
+
 o  calculate the average subscription duration for all customers. 
 o  find customers with subscriptions longer than 12 months. 
 o  calculate total revenue by subscription type. 

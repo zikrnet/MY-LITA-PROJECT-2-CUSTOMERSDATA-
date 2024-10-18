@@ -179,3 +179,26 @@ OFFSET 0 Rows FETCH NEXT 3 ROWS ONLY;
 
 
 o  find the total number of active and canceled subscriptions.
+
+To find the total number of active and canceled subscriptions. I typically need to identify the relevant columns in my customerdata table. The key columns will usually include;
+
+1.  Canceled:  The date the subscription was canceled
+2.  CustomerID:  or a similar identifier to count subcriptions
+
+```
+SELECT 
+CASE 
+WHEN Canceled is NULL THEN 'Active'
+ELSE 'Canceled'
+END AS SubscriptionStatus,
+COUNT(*) AS TotalSubscriptions
+FROM [dbo].[CustomerData]
+GROUP BY
+CASE
+WHEN Canceled IS NULL THEN
+'Active'
+ELSE 'Canceled'
+END;
+```
+
+![canceled](https://github.com/user-attachments/assets/15c08778-070d-4483-b0ad-cc1de7e936c2)

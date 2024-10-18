@@ -42,7 +42,28 @@ TotalCustomers DESC;
 ![retrieve](https://github.com/user-attachments/assets/9cd3611f-7bab-48c8-b99c-0e2dd86385be)
 
 
-o  find the most popular subscription type by the number of customers. 
+o  find the most popular subscription type by the number of customers.
+
+Having a table called ``` Subscriptions ``` with the following relevent columns;
+
+1.  ```CustomerID```:  Unique identifier for each customer
+2.  ```SubscriptionType```:  The type of subscription each customer has
+
+```
+SELECT 
+SubscriptionType,
+COUNT(customerid) AS
+NumberofCustomers
+FROM [dbo].[CustomerData]
+GROUP BY 
+SubscriptionType
+ORDER BY
+NumberofCustomers DESC;
+```
+
+![most popular](https://github.com/user-attachments/assets/603ef975-e5a7-4a19-86d6-f9f4d80b6a10)
+
+
 o  find customers who canceled their subscription within 6 months. 
 o  calculate the average subscription duration for all customers. 
 o  find customers with subscriptions longer than 12 months. 

@@ -131,5 +131,9 @@ DATEDIFF(MONTH,SubscriptionStart, COALESCE(Canceled, GETDATE()))>12;
 
 
 o  calculate total revenue by subscription type. 
+
+
+
+
 o  find the top 3 regions by subscription cancellations. 
 o  find the total number of active and canceled subscriptions.

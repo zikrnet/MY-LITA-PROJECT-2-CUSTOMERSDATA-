@@ -155,4 +155,27 @@ TotalRevenue DESC;
 
 
 o  find the top 3 regions by subscription cancellations. 
+
+To find the top 3 regions by subscription cancellations, I typically need to have a table that includes the following;
+
+1.  Region:  The geographical area where the customer is located
+2.  Canceled:  The date when the subscription was canceled
+
+```
+SELECT Region,
+COUNT(*) AS CancellationCount
+FROM [dbo].[CustomerData]
+WHERE 
+Canceled is NOT NULL
+GROUP BY
+Region
+ORDER BY
+CancellationCount DESC
+OFFSET 0 Rows FETCH NEXT 3 ROWS ONLY;
+```
+
+
+![top 3](https://github.com/user-attachments/assets/3391e194-99fa-45e9-b70b-999fd401a6c0)
+
+
 o  find the total number of active and canceled subscriptions.

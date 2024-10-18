@@ -27,10 +27,21 @@ select * from [dbo].[CustomerData]
 ![create table](https://github.com/user-attachments/assets/4a6eff40-eacc-4cbd-9182-6572670d0f88)
 
 
-
-
-Write queries to extract key insights based on the following questions.  
+### Write queries to extract key insights based on the following questions.  
 o  retrieve the total number of customers from each region. 
+
+```
+SELECT Region,
+COUNT(customerid) AS TotalCustomers
+FROM [dbo].[CustomerData]
+GROUP BY Region
+ORDER BY 
+TotalCustomers DESC;
+```
+
+![retrieve](https://github.com/user-attachments/assets/9cd3611f-7bab-48c8-b99c-0e2dd86385be)
+
+
 o  find the most popular subscription type by the number of customers. 
 o  find customers who canceled their subscription within 6 months. 
 o  calculate the average subscription duration for all customers. 

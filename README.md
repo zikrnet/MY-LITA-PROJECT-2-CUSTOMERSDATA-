@@ -84,8 +84,52 @@ AND DATEDIFF(Month, SubscriptionStart,Canceled)<=6;
 
 ![6months](https://github.com/user-attachments/assets/06d7415c-b0a9-4979-8443-c246be0b4c4d)
 
-o  calculate the average subscription duration for all customers. 
+o  calculate the average subscription duration for all customers.
+
+I need to determine the duration of each customers subscription by substracting the subscription strart date from the cancellation date
+
+Having a table called ```CustomersData``` with the following relevant columns;
+1.  ```CustomerID```: Unique identifier for each customer
+2.  ```SubscriptionStart```:  The date when the subscription started
+3.  ```Canceled```: The date when the subscription was canceled
+
+```
+SELECT 
+AVG(DATEDIFF(DAY, SubscriptionStart, 
+COALESCE(SubscriptionEnd,Canceled,GETDATE()))) AS
+AverageDurationDays
+FROM [dbo].[CustomerData]
+WHERE
+SubscriptionStart IS NOT NULL;
+```
+
+
+![average](https://github.com/user-attachments/assets/4a7cbe99-7e3d-40a9-aa75-b4a18afe13dc)
+
+
 o  find customers with subscriptions longer than 12 months. 
+
+To find customers with subscriptions longer than 12 months, I need to calcullate the duration of each customer's subscription by comparing the ```SubscriptionStart``` of the subscription to either the ```Canceled```
+
+A table called ```CustomersData``` with the following relevant columns;
+1.  ```CustomerID```:  Unique identifier for each customer
+2.  ```SubscriptionStart```:  The date when the subscription started
+3.  ```Canceled``:  The date when the subscription was canceled
+
+```
+SELECT CustomerId,
+SubscriptionStart,
+Canceled,
+DATEDIFF(MONTH, SubscriptionStart,COALESCE(Canceled, GETDATE())) AS
+SubscriptionDurationMonths
+FROM [dbo].[CustomerData]
+WHERE
+DATEDIFF(MONTH,SubscriptionStart, COALESCE(Canceled, GETDATE()))>12;
+```
+
+![12MONTHS](https://github.com/user-attachments/assets/f6d285ab-4047-4a3b-9c7d-0e53cd0e263a)
+
+
 o  calculate total revenue by subscription type. 
 o  find the top 3 regions by subscription cancellations. 
 o  find the total number of active and canceled subscriptions.

@@ -132,7 +132,26 @@ DATEDIFF(MONTH,SubscriptionStart, COALESCE(Canceled, GETDATE()))>12;
 
 o  calculate total revenue by subscription type. 
 
+To calculate total revenue by subcription type, I typically have a table that includes subscription details, including a column for the subscription type and a column for the revenue generated form each subscription
 
+A table called ```CustomerData``` with the following relevant columns;
+
+1.  ```SubscriptionType```:  The type of subscription (e.g. Basic, Standard, Premium)
+2.  ```Revenue```:  The revenue generated from each subscription
+
+
+```
+SELECT SubscriptionType,
+SUM(Revenue) AS TotalRevenue
+FROM
+[dbo].[CustomerData]
+GROUP BY	
+SubscriptionType
+ORDER BY
+TotalRevenue DESC;
+```
+
+![totalrevenue](https://github.com/user-attachments/assets/590ae529-4a2d-4444-807d-81dd585da169)
 
 
 o  find the top 3 regions by subscription cancellations. 

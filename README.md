@@ -42,7 +42,14 @@ f.  Subscription Renewal:  To analyze subscription renewal, compare the number o
 
 o Calculate the average subscription duration and identify the most popular subscription types. 
 
-o Create any other interesting reports.
+o Create any other interesting reports
+
+# Pivort Charts for Visualization
+
+To make analysis more visualluy appealing and easier to understand, I create a Pivot Charts from the PivotTable data
+
+![chart](https://github.com/user-attachments/assets/5b52f10f-ddf1-4095-88f3-b9685e9f802c)
+
 
 ## 2. SQL: 
 

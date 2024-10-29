@@ -4,6 +4,17 @@
 
 ## Summary: This project involves analyzing customer data for a subscription service to identify segments and trends. Your goal is to understand customer behavior, track subscription types,  and identify key trends in cancellations and renewals.  The final deliverable is a Power BI  dashboard that presents your analysis.
 
+## Data Description
+
+The dataset includes the following fields;
+*  Customer ID:  Unique customer identifeir
+*  Subscription Type:  Basic, Premium and Standard
+*  Subscription Start/End Dates
+*  Cancellation Date
+*  Demographics:  Region
+*  Subscription Duration
+* Revenue
+  
 ## Instructions: 
 
 ## 1. Excel: 
@@ -239,3 +250,11 @@ END;
 ```
 
 ![canceled](https://github.com/user-attachments/assets/15c08778-070d-4483-b0ad-cc1de7e936c2)
+
+# POWERBI
+
+Build a Power BI dashboard that visualizes key customer segments, cancellations, and subscription trends. Include slicers for interactive analysis
+
+
+
+

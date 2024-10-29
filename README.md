@@ -14,7 +14,9 @@ The dataset includes the following fields;
 *  Demographics:  Region
 *  Subscription Duration
 * Revenue
-  
+
+![customerdataexcel](https://github.com/user-attachments/assets/e3ba9d16-d83b-4783-86e1-9c27bb9cb181)
+
 ## Instructions: 
 
 ## 1. Excel: 

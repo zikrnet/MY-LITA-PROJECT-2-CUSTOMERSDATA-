@@ -258,5 +258,5 @@ END;
 Build a Power BI dashboard that visualizes key customer segments, cancellations, and subscription trends. Include slicers for interactive analysis
 
 
-
+![project 2](https://github.com/user-attachments/assets/79ea7638-8ee1-443c-a5cc-49c163101620)
 

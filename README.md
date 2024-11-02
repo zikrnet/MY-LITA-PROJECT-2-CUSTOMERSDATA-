@@ -363,6 +363,9 @@ iii.  Targeted Marketing:  Use insights from the counts to design targeted campa
 
 This insights will help to track and analyze customer distribution across different subscription statuses.
 
+## 11.  Total Subscriptions by Subscription Type
+
+This will give you a clear overview of the distribution of subcriptions by type to make data-driven decisions
 
 ![project 2](https://github.com/user-attachments/assets/79ea7638-8ee1-443c-a5cc-49c163101620)
 

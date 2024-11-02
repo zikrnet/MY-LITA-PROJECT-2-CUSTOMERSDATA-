@@ -260,3 +260,15 @@ Build a Power BI dashboard that visualizes key customer segments, cancellations,
 
 ![project 2](https://github.com/user-attachments/assets/79ea7638-8ee1-443c-a5cc-49c163101620)
 
+More Visual
+
+
+
+
+![top 10](https://github.com/user-attachments/assets/afee8404-f825-4bdb-9d8f-79901f024be7)
+
+
+
+
+
+

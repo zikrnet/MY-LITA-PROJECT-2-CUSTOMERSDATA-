@@ -321,6 +321,35 @@ iii.  Subscription End:  The date the subscription is set to end or has ended if
 
 This approach provides a comprehensive view of subcription behaviours, helps predict customer needs, and supports data-driven strategies to increase retention and optimize revenue
 
+## 6.  Total Subscription by Region
+
+Using the Map Visual, this approach provides a geographic visualization of subscription distribution, making it easy to identify high and low performing regions at a glance and a map visual provides a clear, interactive way to understand geographic trends in subscriptions, making it an effective tool for targeting regional strategies. 
+
+## 7.  Insights from Average Subscription Duration
+
+i.  Longer Duration in Annual Plans:  If annual subscriptions have a higher average duration it may indicate greater commitment. 
+
+By analyzing the average subscription duration, I can identiify patterns in customer loyalty and retention, helping to strategies on how to enhance customer engagement. 
+
+## 8.  Total Revenue
+
+```TotalRevenue = SUM(CustomerData[Revenue])```
+
+This approach provides a clear view of revenue performance, aiding in financial planning and strategic decision-making
+
+## 9.  Top 10 Customers by Revenue
+
+To identify the TOP 10 Customers by Revenue by creating a measure for total reveneue per customer and then use this measure to rank and visualize the top customers. 
+
+```Rank by Revenue = RANKX(ALL('CustomerData'[CustomerName]),[TotalRevenue], ,DESC,Dense)```
+
+## Insights from Top 10 Customers Analysis
+
+i.  Key Revenue Drivers:  Identify which customers are generating the most revenue
+ii.  Customer Relationships:  Understanding who the top customers are can guide relationship management and service enhancements
+iii.  Potential Upselling Opportunities:  Analyze the profiles of top customers to identify potential upselling or cross-selling opportunities based on their purchasing patterns
+
+This approach helps to analyze and visualize the top customers by revenue, giving insights to drive strategic business decisions. 
 
 ![project 2](https://github.com/user-attachments/assets/79ea7638-8ee1-443c-a5cc-49c163101620)
 

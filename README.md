@@ -351,6 +351,19 @@ iii.  Potential Upselling Opportunities:  Analyze the profiles of top customers 
 
 This approach helps to analyze and visualize the top customers by revenue, giving insights to drive strategic business decisions. 
 
+## 10.  Count of CustomerID by Subscription Status
+
+To calculate the Count of Customer IDs by Subscription Status, I have a Subscription Status field that indicates whether a subscription is **Active** or **Cancel**
+
+## Insights from Count of CustomerID by Subscription Status
+
+i.  Customer Retention:  A high number of active subscriptions compared to canceled ones indicate strong customer retention
+ii.  Churn Analysis:  If the count of canceled subscriptions is high there will be a need to investigate the reasons for churn and implement retention strategies 
+iii.  Targeted Marketing:  Use insights from the counts to design targeted campaigns aimed at re-engaging canceled customers or upselling to active ones
+
+This insights will help to track and analyze customer distribution across different subscription statuses.
+
+
 ![project 2](https://github.com/user-attachments/assets/79ea7638-8ee1-443c-a5cc-49c163101620)
 
 More Visual

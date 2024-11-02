@@ -388,6 +388,15 @@ ii.  Marketing Strategies:  Understanding which subscription types have shorter 
 
 iii.  Subscription Performance:  Analyze if certain subscription types are performing better over time, influencing future pricing or promotional strategies
 
+
+## 13.  Count of CustomerID by Month
+
+i.  Customer Grwoth Trends:  I can observe trends over time to see if customer counts are increasing or decreasing monthly
+ii.  Seasonal Patterns:  Identify any seasonal fluctuations in customer acquisitions or retention
+iii.  Marketing Effectiveness:  Analyze how marketing campaigns impact customer growth by looking at the counts before and after specific intiatives 
+
+By visualizing the Count of CustomerIDs by Month, there is more insights in Customer acquisitions trends and overall business growth 
+
 ![project 2](https://github.com/user-attachments/assets/79ea7638-8ee1-443c-a5cc-49c163101620)
 
 More Visual

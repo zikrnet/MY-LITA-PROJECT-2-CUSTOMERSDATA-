@@ -145,17 +145,13 @@ A table called ```CustomersData``` with the following relevant columns;
 3.  ```Canceled``:  The date when the subscription was canceled
 
 ```
-SELECT CustomerId,
-SubscriptionStart,
-Canceled,
-DATEDIFF(MONTH, SubscriptionStart,COALESCE(Canceled, GETDATE())) AS
-SubscriptionDurationMonths
-FROM [dbo].[CustomerData]
-WHERE
-DATEDIFF(MONTH,SubscriptionStart, COALESCE(Canceled, GETDATE()))>12;
+SELECT CustomerId, SubscriptionDuration AS DurationInMonths
+FROM [dbo].[CustomerData$]
+WHERE Canceled = 1
+AND SubscriptionDuration > 12;
 ```
 
-![12MONTHS](https://github.com/user-attachments/assets/f6d285ab-4047-4a3b-9c7d-0e53cd0e263a)
+![41](https://github.com/user-attachments/assets/8a3f21d0-0a92-47c1-b47e-bbc2dbe2f71e)
 
 
 o  calculate total revenue by subscription type. 

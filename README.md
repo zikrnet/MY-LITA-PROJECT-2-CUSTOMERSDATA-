@@ -139,11 +139,6 @@ o  find customers with subscriptions longer than 12 months.
 
 To find customers with subscriptions longer than 12 months, I need to calcullate the duration of each customer's subscription by comparing the ```SubscriptionStart``` of the subscription to either the ```Canceled```
 
-A table called ```CustomersData``` with the following relevant columns;
-1.  ```CustomerID```:  Unique identifier for each customer
-2.  ```SubscriptionStart```:  The date when the subscription started
-3.  ```Canceled``:  The date when the subscription was canceled
-
 ```
 SELECT CustomerId, SubscriptionDuration AS DurationInMonths
 FROM [dbo].[CustomerData$]

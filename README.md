@@ -71,11 +71,14 @@ Hint – You need to load the dataset into your SQL Server environment to write 
 
 ```
 Create database LITA_CUSTOMER_DATA
-
-select * from [dbo].[CustomerData]
 ```
 
-![create table](https://github.com/user-attachments/assets/4a6eff40-eacc-4cbd-9182-6572670d0f88)
+```
+select * from [dbo].[CustomerData$]
+```
+
+
+![36](https://github.com/user-attachments/assets/654c29a2-0e27-4bd2-835f-b262ebecf1fc)
 
 
 ### Write queries to extract key insights based on the following questions.  
@@ -84,31 +87,24 @@ o  retrieve the total number of customers from each region.
 ```
 SELECT Region,
 COUNT(customerid) AS TotalCustomers
-FROM [dbo].[CustomerData]
+FROM [dbo].[CustomerData$]
 GROUP BY Region
 ORDER BY 
 TotalCustomers DESC;
 ```
 
-![retrieve](https://github.com/user-attachments/assets/9cd3611f-7bab-48c8-b99c-0e2dd86385be)
-
+![37](https://github.com/user-attachments/assets/82994961-ab60-474f-abe9-143cc1ce7544)
 
 o  find the most popular subscription type by the number of customers.
 
-Having a table called ``` Subscriptions ``` with the following relevent columns;
-
-1.  ```CustomerID```:  Unique identifier for each customer
-2.  ```SubscriptionType```:  The type of subscription each customer has
-
 ```
 SELECT TOP 1 SubscriptionType, COUNT (Customerid) AS Numberofcustomers
-FROM [dbo].[CustomerData]
+FROM [dbo].[CustomerData$]
 GROUP BY SubscriptionType
 ORDER BY Numberofcustomers DESC;
 ```
 
-![32](https://github.com/user-attachments/assets/68f6655d-0994-4903-b7c5-8acf5a9be3ab)
-
+![38](https://github.com/user-attachments/assets/ff5de33e-1d4e-4e4c-aa10-af5bc20188d8)
 
 o  find customers who canceled their subscription within 6 months. 
 
@@ -119,38 +115,24 @@ To find the customers who canceled their subscription within 6 months, I need to
 3.  Start Date: The date when the subscription started that's ```StartDate```
 
 ```
-SELECT CustomerId,
-SubscriptionStart,
-Canceled
-FROM [dbo].[CustomerData]
-WHERE
-Canceled IS NOT NULL
-AND DATEDIFF(Month, SubscriptionStart,Canceled)<=6;
+SELECT CustomerId, DATEDIFF(MONTH, SubscriptionStart, SubscriptionEnd) AS DurationInMonths
+FROM [dbo].[CustomerData$]
+WHERE Canceled = 1
+AND DATEDIFF(MONTH, SubscriptionStart, SubscriptionEnd) <= 6; 
 ```
 
-![6months](https://github.com/user-attachments/assets/06d7415c-b0a9-4979-8443-c246be0b4c4d)
+![39](https://github.com/user-attachments/assets/1ae91901-1f80-443d-a633-c90f5b96fcbf)
 
 o  calculate the average subscription duration for all customers.
 
-I need to determine the duration of each customers subscription by substracting the subscription strart date from the cancellation date
-
-Having a table called ```CustomersData``` with the following relevant columns;
-1.  ```CustomerID```: Unique identifier for each customer
-2.  ```SubscriptionStart```:  The date when the subscription started
-3.  ```Canceled```: The date when the subscription was canceled
+The duration of each customers subscription by substracting the subscription strart date from the cancellation date
 
 ```
-SELECT 
-AVG(DATEDIFF(DAY, SubscriptionStart, 
-COALESCE(SubscriptionEnd,Canceled,GETDATE()))) AS
-AverageDurationDays
-FROM [dbo].[CustomerData]
-WHERE
-SubscriptionStart IS NOT NULL;
+SELECT AVG(SubscriptionDuration) AS AverageSubscriptionDuration
+FROM [dbo].[CustomerData$];
 ```
 
-
-![average](https://github.com/user-attachments/assets/4a7cbe99-7e3d-40a9-aa75-b4a18afe13dc)
+![40](https://github.com/user-attachments/assets/0439d487-ca77-4f67-9b1f-fd3b7f4b202a)
 
 
 o  find customers with subscriptions longer than 12 months. 

@@ -100,18 +100,13 @@ Having a table called ``` Subscriptions ``` with the following relevent columns;
 2.  ```SubscriptionType```:  The type of subscription each customer has
 
 ```
-SELECT 
-SubscriptionType,
-COUNT(customerid) AS
-NumberofCustomers
+SELECT TOP 1 SubscriptionType, COUNT (Customerid) AS Numberofcustomers
 FROM [dbo].[CustomerData]
-GROUP BY 
-SubscriptionType
-ORDER BY
-NumberofCustomers DESC;
+GROUP BY SubscriptionType
+ORDER BY Numberofcustomers DESC;
 ```
 
-![most popular](https://github.com/user-attachments/assets/603ef975-e5a7-4a19-86d6-f9f4d80b6a10)
+![32](https://github.com/user-attachments/assets/68f6655d-0994-4903-b7c5-8acf5a9be3ab)
 
 
 o  find customers who canceled their subscription within 6 months. 

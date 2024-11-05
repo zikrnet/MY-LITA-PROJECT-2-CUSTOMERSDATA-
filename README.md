@@ -192,7 +192,6 @@ ORDER BY NumberofCancellations DESC;
 ![43](https://github.com/user-attachments/assets/57ae8d7c-b95e-4e91-bd6d-3b06cfe95891)
 
 
-
 o  find the total number of active and canceled subscriptions.
 
 To find the total number of active and canceled subscriptions. I typically need to identify the relevant columns in my customerdata table. The key columns will usually include;
@@ -201,22 +200,16 @@ To find the total number of active and canceled subscriptions. I typically need 
 2.  CustomerID:  or a similar identifier to count subcriptions
 
 ```
-SELECT 
-CASE 
-WHEN Canceled is NULL THEN 'Active'
-ELSE 'Canceled'
-END AS SubscriptionStatus,
-COUNT(*) AS TotalSubscriptions
-FROM [dbo].[CustomerData]
-GROUP BY
-CASE
-WHEN Canceled IS NULL THEN
-'Active'
-ELSE 'Canceled'
-END;
+SELECT CASE
+WHEN Canceled = 1 THEN 'True'
+WHEN Canceled = 0 THEN 'False'
+END AS Canceled, COUNT(CustomerId) AS TotalSubscriptions
+FROM [dbo].[CustomerData$]
+GROUP BY Canceled;
 ```
 
-![canceled](https://github.com/user-attachments/assets/15c08778-070d-4483-b0ad-cc1de7e936c2)
+![44](https://github.com/user-attachments/assets/46f3f6bb-94ee-4c11-ba0f-ed32bf02b2ac)
+
 
 # POWERBI
 

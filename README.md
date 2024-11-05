@@ -163,14 +163,15 @@ A table called ```CustomerData``` with the following relevant columns;
 SELECT SubscriptionType,
 SUM(Revenue) AS TotalRevenue
 FROM
-[dbo].[CustomerData]
+[dbo].[CustomerData$]
 GROUP BY	
 SubscriptionType
 ORDER BY
 TotalRevenue DESC;
 ```
 
-![totalrevenue](https://github.com/user-attachments/assets/590ae529-4a2d-4444-807d-81dd585da169)
+
+![42](https://github.com/user-attachments/assets/ded64a25-7af0-4ce0-9ebb-1fc79748976d)
 
 
 o  find the top 3 regions by subscription cancellations. 
@@ -181,20 +182,15 @@ To find the top 3 regions by subscription cancellations, I typically need to hav
 2.  Canceled:  The date when the subscription was canceled
 
 ```
-SELECT Region,
-COUNT(*) AS CancellationCount
-FROM [dbo].[CustomerData]
-WHERE 
-Canceled is NOT NULL
-GROUP BY
-Region
-ORDER BY
-CancellationCount DESC
-OFFSET 0 Rows FETCH NEXT 3 ROWS ONLY;
+SELECT TOP 3 Region, COUNT(CustomerId) AS NumberofCancellations
+FROM [dbo].[CustomerData$]
+WHERE Canceled = 'TRUE'
+GROUP BY Region
+ORDER BY NumberofCancellations DESC;
 ```
 
+![43](https://github.com/user-attachments/assets/57ae8d7c-b95e-4e91-bd6d-3b06cfe95891)
 
-![top 3](https://github.com/user-attachments/assets/3391e194-99fa-45e9-b70b-999fd401a6c0)
 
 
 o  find the total number of active and canceled subscriptions.
@@ -226,7 +222,9 @@ END;
 
 Build a Power BI dashboard that visualizes key customer segments, cancellations, and subscription trends. Include slicers for interactive analysis
 
+
 ## Objectives;
+
 
 ## 1.  Total Subscription
 
@@ -234,9 +232,11 @@ To calculate and analyze **Total Subscriptions** I focus on the total count of a
 
 Using this formular by creating a measure; ```Total Subscriptions = COUNT('CustomerData'[CustomerID])```
 
+
 ## Insights
 
 Analyzing Total Subscriptions helps in understanding the overall health and growth of your customer base. 
+
 
 ## 2.  Sum of Revenue by Subscription Type and Region
 
@@ -275,9 +275,11 @@ iii.  Optimize Onboarding:  If a significant number of subcriptions are pending,
 
 Understanding and tracking  subscription status allows you to maintain customer relationships, improve retention and refine renewal efforts. 
 
+
 ## 4.  Count of CustomerID by Subscription Type
 
 This analysis helps you understand customer preferences and the distribution of customers across various subscription plans
+
 
 ## Insights
 
@@ -286,6 +288,7 @@ i.  Popular Subscription Types:  Identify which subcription types have the highe
 ii.  Retention and Churn:  For subscription types with lower customer counts, analyze if higher churn is a factor and explore ways to enhance customer satisfaction
 
 This approach helps to explore customer distribution across different subscription types, allowing for targeted marketing or retention strategies based on customer preferences.
+
 
 ## 5.  Subscription Type, Start and End
 
@@ -299,9 +302,11 @@ iii.  Subscription End:  The date the subscription is set to end or has ended if
 
 This approach provides a comprehensive view of subcription behaviours, helps predict customer needs, and supports data-driven strategies to increase retention and optimize revenue
 
+
 ## 6.  Total Subscription by Region
 
 Using the Map Visual, this approach provides a geographic visualization of subscription distribution, making it easy to identify high and low performing regions at a glance and a map visual provides a clear, interactive way to understand geographic trends in subscriptions, making it an effective tool for targeting regional strategies. 
+
 
 ## 7.  Insights from Average Subscription Duration
 
@@ -309,17 +314,20 @@ i.  Longer Duration in Annual Plans:  If annual subscriptions have a higher aver
 
 By analyzing the average subscription duration, I can identiify patterns in customer loyalty and retention, helping to strategies on how to enhance customer engagement. 
 
+
 ## 8.  Total Revenue
 
 ```TotalRevenue = SUM(CustomerData[Revenue])```
 
 This approach provides a clear view of revenue performance, aiding in financial planning and strategic decision-making
 
+
 ## 9.  Top 10 Customers by Revenue
 
 To identify the TOP 10 Customers by Revenue by creating a measure for total reveneue per customer and then use this measure to rank and visualize the top customers. 
 
 ```Rank by Revenue = RANKX(ALL('CustomerData'[CustomerName]),[TotalRevenue], ,DESC,Dense)```
+
 
 ## Insights from Top 10 Customers Analysis
 
@@ -331,9 +339,11 @@ iii.  Potential Upselling Opportunities:  Analyze the profiles of top customers 
 
 This approach helps to analyze and visualize the top customers by revenue, giving insights to drive strategic business decisions. 
 
+
 ## 10.  Count of CustomerID by Subscription Status
 
 To calculate the Count of Customer IDs by Subscription Status, I have a Subscription Status field that indicates whether a subscription is **Active** or **Cancel**
+
 
 ## Insights from Count of CustomerID by Subscription Status
 
@@ -345,9 +355,11 @@ iii.  Targeted Marketing:  Use insights from the counts to design targeted campa
 
 This insights will help to track and analyze customer distribution across different subscription statuses.
 
+
 ## 11.  Total Subscriptions by Subscription Type
 
 This will give you a clear overview of the distribution of subcriptions by type to make data-driven decisions
+
 
 ## 12.  Average Subscription Duration by Subscription Type
 
@@ -360,9 +372,12 @@ iii.  Subscription Performance:  Analyze if certain subscription types are perfo
 
 ## 13.  Count of CustomerID by Month
 
-i.  Customer Grwoth Trends:  I can observe trends over time to see if customer counts are increasing or decreasing monthly
+i.  Customer Growth Trends:  I can observe trends over time to see if customer counts are increasing or decreasing monthly
+
 ii.  Seasonal Patterns:  Identify any seasonal fluctuations in customer acquisitions or retention
+
 iii.  Marketing Effectiveness:  Analyze how marketing campaigns impact customer growth by looking at the counts before and after specific intiatives 
+
 
 By visualizing the Count of CustomerIDs by Month, there is more insights in Customer acquisitions trends and overall business growth 
 

@@ -413,7 +413,12 @@ More Visual
 
 ##  Conclusion
 
-1.  Customer Segmentation & Demographics:  
+1.  Basic:  This subscription type leads as it generated more revenue with 50%. This indicates potentially larger transaction value per sale. Giving a clear confirmation that customers prefer the Basic       
+     subscription type
+
+2.  Premium:  This subscription has a bit low patronage with 25%. Customers have low interest in this kind of subscription
+
+3.  Standard:  This subscription revenue is relatively close to premium with a revenue of 24.92%, customers having interest in this subscription are almost that of premium
 
 ##  Recommendations
 

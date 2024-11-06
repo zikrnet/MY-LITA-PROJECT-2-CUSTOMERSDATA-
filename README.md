@@ -10,16 +10,25 @@ This project involves analyzing customer data for a subscription service to iden
 ##  Data Source
 
 The primary source of data used is LITA CAPSTONE DATASET
+
+##  Tools Used
+
+i.  Microsoft Excel:  Data Cleaning and Analysis
+
+ii.  SQL:  for querying data
+
+iii.  PowerBI:  for visulaization of the dataset
+
 ## Data Description
 
 The dataset includes the following fields;
 *  Customer ID:  Unique customer identifier
 *  Subscription Type:  Basic, Premium and Standard
-*  Subscription Start/End Dates
-*  Cancellation Date
-*  Demographics:  Region
-*  Subscription Duration
-* Revenue
+*  Region:  geographic area where the customer is located
+*  Subscription Start:  Date when the subscription began
+*  Subscription End:  Date when the subscription ended
+*  Cancellation Date:  Indicates if the subscription was canceled i.e. (True/False)
+* Revenue:  Income generated from the customer's subscription 
 
 ![33](https://github.com/user-attachments/assets/cfaf1fc2-61e3-4f0a-a202-0933aa2be796)
 

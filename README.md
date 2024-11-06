@@ -32,6 +32,13 @@ The dataset includes the following fields;
 
 ![33](https://github.com/user-attachments/assets/cfaf1fc2-61e3-4f0a-a202-0933aa2be796)
 
+##  Data Cleaning and Preparation
+
+In the initial phase of the data cleaning and preparations, I perform the following actions;
+
+i.  Data Inspection and loading
+ii.  Handling missing variable
+iii.  Data cleaning and formatting 
 
 ## Instructions: 
 
@@ -402,3 +409,13 @@ More Visual
 
 ![project 2c](https://github.com/user-attachments/assets/5ff8ce42-3d0b-4b9e-8b69-ce9e10612ba9)
 
+
+
+##  Conclusion
+
+1.  Customer Segmentation & Demographics:  
+
+##  Recommendations
+
+1.  Based on the insights, offer actionable recommendations such as targeting specific segments, enhancing customer experience, improving product offerings or increasing marketing efforts in certain regions
+2.  Suggest potential follow-up analyses for more in-depth investigation or tracking over time to measure the impact of implemented changes 
